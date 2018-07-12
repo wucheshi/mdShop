@@ -1,2 +1,2 @@
 # mdShop
-a shop
+a shop mini-project
