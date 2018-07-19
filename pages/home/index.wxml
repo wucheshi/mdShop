@@ -1,5 +1,11 @@
 <!--index.wxml-->
 <view class="container">
+  <!-- 分类 -->
+  <view class="type-list">
+    <view wx:for="{{typeList}}" class="{{ currentType === index ? 'active': '' }}" :key="{{index}}" data-index="{{index}}" data-item="{{item}}" bindtap="selectType">{{item.label}}</view>
+  </view>
+  <!-- 轮播 -->
+
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>

@@ -4,10 +4,41 @@ const app = getApp()
 
 Page({
   data: {
+    // 分类列表
+    typeList: [
+      {
+        value: 0,
+        label: '推荐',
+      },
+      {
+        value: 1,
+        label: '量版组合',
+      },
+      {
+        value: 2,
+        label: '肉脯海鲜',
+      },
+      {
+        value: 3,
+        label: '休闲零食',
+      }
+    ],
+
+    // 当前选中分类
+    currentType: 0,
+
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  // 选择分类
+  selectType (e) {
+    let { target: { dataset: { index, item } } } = e
+    this.setData({
+      currentType: index
+    })
+    // console.log(index, item)
   },
   //事件处理函数
   bindViewTap: function() {

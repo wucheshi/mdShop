@@ -1,36 +1,56 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/user/user",
-    "pages/logs/logs"
+    "pages/home/index",
+    "pages/type/index",
+    "pages/cicyle/index",
+    "pages/cart/index",
+    "pages/user/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#F9553B",
+    "navigationBarTitleText": "麦兜商城",
+    "navigationBarTextStyle":"#fff"
   },
   "tabBar": {
-    "color": "",
-    "selectedColor": "",
+    "color": "#666",
+    "selectedColor": "#f9553b",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/index",
         "text": "首页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/home_select.png"
       },
       {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/type/index",
+        "text": "分类",
+        "iconPath": "assets/images/type.png",
+        "selectedIconPath": "assets/images/type_select.png"
+      },
+      {
+        "pagePath": "pages/cicyle/index",
+        "text": "麦兜圈",
+        "iconPath": "assets/images/cicyle.png",
+        "selectedIconPath": "assets/images/cicyle_select.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "assets/images/cart.png",
+        "selectedIconPath": "assets/images/cart_select.png"
+      },
+      {
+        "pagePath": "pages/user/index",
         "text": "我的",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "assets/images/user.png",
+        "selectedIconPath": "assets/images/user_select.png"
       }
     ]
   },
   "networkTimeout": {
-    "request": 5000,
-    "downfile": 5000
+    "request": 10000,
+    "downfile": 10000
   },
   "debug": true
 }

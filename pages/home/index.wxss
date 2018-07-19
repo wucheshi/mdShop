@@ -1,0 +1,17 @@
+/**index.wxss**/
+.type-list {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #010101;
+}
+.type-list view {
+  flex: 1;
+  text-align: center;
+}
+.type-list .active {
+  border-bottom: 2px solid #f60;
+  color: #f60;
+}
