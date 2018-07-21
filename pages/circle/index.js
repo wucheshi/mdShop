@@ -3,7 +3,12 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    logs: []
+    // 消息列表
+    messageList: [
+      {
+        
+      }
+    ]
   },
   onLoad: function () {
     this.setData({

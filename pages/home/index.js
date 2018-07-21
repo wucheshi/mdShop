@@ -21,11 +21,100 @@ Page({
       {
         value: 3,
         label: '休闲零食',
+      },
+      {
+        value: 4,
+        label: '推荐11',
       }
     ],
 
     // 当前选中分类
     currentType: 0,
+
+    // 轮播图片数组
+    imgUrls: [
+      {
+        src: 'http://i1.bvimg.com/654779/234619b4c03537e6.png',
+        link: ''
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/234619b4c03537e6.png',
+        link: ''
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/234619b4c03537e6.png',
+        link: ''
+      }
+    ],
+
+    // 轮播组件高度
+    bannerHeight: 0,
+
+    // 中间广告图
+    middleBanner: 'http://i1.bvimg.com/654779/f93d107abad6d469.png',
+
+    // 菜单列表
+    menuList: [
+      {
+        src: 'http://i1.bvimg.com/654779/08ed38de36843444.png',
+        title: '领券中心'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/314880e4304609a8.png',
+        title: '每日签到'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/7350f2a76e77bec3.png',
+        title: '福利抽奖'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/8a0057e18a18f2ef.png',
+        title: '会员中心'
+      }
+    ],
+
+    // 产品banner
+    proBanner: 'http://i1.bvimg.com/654779/6ebb48cbae1d7911.png',
+
+    // 产品列表
+    proList: [
+      {
+        src: 'http://i1.bvimg.com/654779/d934ec823ec6ceb3.png',
+        name: '夏威夷果',
+        price: '46.9',
+        oldPrice: '78.8'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/d634f40c1d013658.png',
+        name: '野生核桃',
+        price: '46.9',
+        oldPrice: '78.8'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/ab32ff27bee0c4db.png',
+        name: '坚果搭配',
+        price: '46.9',
+        oldPrice: '78.8'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/8a1b57b55824258a.png',
+        name: '坚果搭配',
+        price: '46.9',
+        oldPrice: '78.8'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/5189e5693222c38d.png',
+        name: '坚果搭配',
+        price: '46.9',
+        oldPrice: '78.8'
+      },
+      {
+        src: 'http://i1.bvimg.com/654779/7778879728ebfbd2.png',
+        name: '坚果搭配',
+        price: '46.9',
+        oldPrice: '78.8'
+      }
+    ],
 
     motto: 'Hello World',
     userInfo: {},
@@ -38,48 +127,17 @@ Page({
     this.setData({
       currentType: index
     })
-    // console.log(index, item)
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  // 动态设置swiper高度
+  imageLoad (e) {
+    let { screenWidth } = wx.getSystemInfoSync()
+    let { detail: { width, height } } = e
+    let ratio = width / height
+    this.setData({
+      bannerHeight: screenWidth / ratio
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    
   }
 })

@@ -2,12 +2,13 @@
   "pages":[
     "pages/home/index",
     "pages/type/index",
-    "pages/cicyle/index",
+    "pages/circle/index",
     "pages/cart/index",
     "pages/user/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
+    "backgroundColor": "#f2f2f2",
     "navigationBarBackgroundColor": "#F9553B",
     "navigationBarTitleText": "麦兜商城",
     "navigationBarTextStyle":"#fff"
@@ -29,10 +30,10 @@
         "selectedIconPath": "assets/images/type_select.png"
       },
       {
-        "pagePath": "pages/cicyle/index",
+        "pagePath": "pages/circle/index",
         "text": "麦兜圈",
-        "iconPath": "assets/images/cicyle.png",
-        "selectedIconPath": "assets/images/cicyle_select.png"
+        "iconPath": "assets/images/circle.png",
+        "selectedIconPath": "assets/images/circle_select.png"
       },
       {
         "pagePath": "pages/cart/index",
