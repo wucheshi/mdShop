@@ -1,4 +1,51 @@
 <!--logs.wxml-->
 <view class="container circle-list">
-  
+  <!-- 精选话题 -->
+  <view class="selected-topic">
+    <view class="topic-main-title">精选话题</view>
+
+    <!-- 大家都在聊 -->
+    <view class="topic-header">
+        <view class="topic-header-title">大家都在聊</view>
+        <view class="topic-tags">
+            <view wx:for="{{topicTags}}" wx:key="{{index}}">{{item.title}}</view>
+        </view>
+    </view>
+
+    <!-- 话题banner -->
+    <view class="topic-banner">
+        <image src="{{topicBanner}}" mode="widthFix" />
+    </view>
+
+    <!-- 话题列表 -->
+    <view class="topic-list">
+        <view class="topic" wx:for="{{topicList}}" wx:key="{{index}}">
+            <view class="topic-top">
+                <image src="{{item.src}}" />
+                <view class="topic-title">{{item.title}}</view>
+                <view class="topic-pTime">{{item.pTime}}</view>
+            </view>
+            <view class="topic-content">
+                <view class="topic-content_text">{{item.content}}</view>
+                <view class="topic-content_images">
+                    <image src="{{image}}" wx:for="{{item.imageArr}}" mode="widthFix" wx:for-item="image" wx:for-index="imageId" wx:key="{{imageId}}" />
+                </view>
+            </view>
+            <view class="topic-operate">
+                <view class="topic-see">
+                    <image src="http://i4.bvimg.com/654779/be7d4875dcce8deb.png" />
+                    <text>{{item.seeNum}}</text>
+                </view>
+                <view class="topic-heart">
+                    <image src="http://i4.bvimg.com/654779/bab84cedf9e81f98.png" />
+                    <text>{{item.heartNum}}</text>
+                </view>
+                <view class="topic-message">
+                    <image src="http://i4.bvimg.com/654779/7eedef744f28f3d5.png" />
+                    <text>{{item.messageNum}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
 </view>
